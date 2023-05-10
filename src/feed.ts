@@ -1,9 +1,10 @@
 import renderAtom from "./atom1";
 import renderJSON from "./json";
+import renderPodcastRSS from "./podcast";
 import renderRSS from "./rss2";
-import { Author, Extension, FeedOptions, Item } from "./typings";
+import { Author, Extension, FeedOptions, Item, PodcastItem, PodcastLiveItem } from "./typings";
 
-export { Author, Extension, FeedOptions, Item };
+export { Author, Extension, FeedOptions, Item, PodcastItem, PodcastLiveItem };
 
 /**
  * Class used to generate Feeds
@@ -11,6 +12,8 @@ export { Author, Extension, FeedOptions, Item };
 export class Feed {
   options: FeedOptions;
   items: Item[] = [];
+  podcastItems: PodcastItem[] = [];
+  podcastLiveItems: PodcastLiveItem[] = [];
   categories: string[] = [];
   contributors: Author[] = [];
   extensions: Extension[] = [];
@@ -24,6 +27,18 @@ export class Feed {
    * @param item
    */
   public addItem = (item: Item) => this.items.push(item);
+
+  /**
+   * Add a feed podcast item
+   * @param podcastItem
+   */
+  public addPodcastItem = (podcastItem: PodcastItem) => this.podcastItems.push(podcastItem);
+
+  /**
+  * Add a feed podcast liveItem
+  * @param podcastLiveItem
+  */
+  public addPodcastLiveItem = (podcastLiveItem: PodcastLiveItem) => this.podcastLiveItems.push(podcastLiveItem);
 
   /**
    * Add a category
@@ -52,6 +67,12 @@ export class Feed {
    * Returns a RSS 2.0 feed
    */
   public rss2 = (): string => renderRSS(this);
+
+  /**
+   * 
+   * Returns a RSS 2.0 feed using the Podcast Namespace
+   */
+  public podcast = (): string => renderPodcastRSS(this);
 
   /**
    * Returns a JSON1 feed

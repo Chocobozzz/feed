@@ -24,7 +24,14 @@ export const sampleFeed = new Feed({
     name: "John Doe",
     email: "johndoe@example.com",
     link: "https://example.com/johndoe?link=sanitized&value=2"
-  }
+  },
+
+  customXMLNS: [
+    {
+      name: "biz",
+      value: "http://example.com/biz-xmlns"
+    },
+  ],
 });
 
 sampleFeed.addCategory("Technology");
