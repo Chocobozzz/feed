@@ -16,7 +16,7 @@ export default (ins: Feed) => {
     rss: {
       _attributes: {
         version: "2.0",
-        "xmlns:podcast": "https://github.com/Podcastindex-org/podcast-namespace/blob/main/docs/1.0.md",
+        "xmlns:podcast": "https://podcastindex.org/namespace/1.0",
         "xmlns:itunes": "http://www.itunes.com/dtds/podcast-1.0.dtd",
         "xmlns:dc": "http://purl.org/dc/elements/1.1/",
         "xmlns:content": "http://purl.org/rss/1.0/modules/content/",
@@ -110,7 +110,7 @@ export default (ins: Feed) => {
     }
   }
 
-  base.rss.channel["itunes:explicit"] = { _text: options.nsfw ? "yes" : "no" }
+  base.rss.channel["itunes:explicit"] = { _text: options.nsfw ? "true" : "false" }
 
   /**
    * Channel Image
@@ -392,7 +392,7 @@ const makePodcastItemJSON = (entry: PodcastItem) => {
     }
   }
 
-  item["itunes:explicit"] = { _text: entry.nsfw ? "yes" : "no" }
+  item["itunes:explicit"] = { _text: entry.nsfw ? "true" : "false" }
 
   if (entry.customTags) {
     addCustomTagsToObject(item, entry.customTags)
