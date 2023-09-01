@@ -194,7 +194,7 @@ const formatCategory = (category: Category) => {
 
   return {
     _attributes: {
-      label: name,
+      label: sanitize(name),
       scheme,
       term,
     },
