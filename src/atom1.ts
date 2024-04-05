@@ -34,10 +34,12 @@ export default (ins: Feed) => {
   }
 
   // link (rel="self")
-  const atomLink = sanitize(options.feed || (options.feedLinks && options.feedLinks.atom))
+  {
+    const atomLink = sanitize(options.feed || (options.feedLinks && options.feedLinks.atom))
 
-  if (atomLink) {
-    base.feed.link.push({ _attributes: { rel: "self", href: sanitize(atomLink) } })
+    if (atomLink) {
+      base.feed.link.push({ _attributes: { rel: "self", href: atomLink } })
+    }
   }
 
   // link (rel="hub")
