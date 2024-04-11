@@ -133,6 +133,10 @@ exports[`podcast should generate a valid feed person 1`] = `
         <generator>https://github.com/jpmonette/feed</generator>
         <podcast:medium>podcast</podcast:medium>
         <podcast:person href=\\"https://example.com/hello-world?link=sanitized&amp;value=2\\" img=\\"https://example.com/john-doe.png\\">John Doe</podcast:person>
+        <itunes:owner>
+            <itunes:name>John Doe</itunes:name>
+            <itunes:email>johndoe@example.com</itunes:email>
+        </itunes:owner>
         <podcast:locked owner=\\"johndoe@example.com\\">yes</podcast:locked>
         <itunes:explicit>no</itunes:explicit>
         <copyright>All rights reserved 2013, John Doe</copyright>

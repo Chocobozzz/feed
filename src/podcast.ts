@@ -92,6 +92,13 @@ export default (ins: Feed) => {
     }
 
     base.rss.channel["podcast:person"] = personTags
+
+    if (options.person.length !== 0) {
+      base.rss.channel["itunes:owner"] = {
+        'itunes:name': { _text: options.person[0].name },
+        'itunes:email': options.locked?.email
+      }
+    }
   }
 
   if (options.managingEditor && options.managingEditor.name && options.managingEditor.email) {
