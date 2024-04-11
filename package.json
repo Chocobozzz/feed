@@ -1,6 +1,6 @@
 {
   "name": "@peertube/feed",
-  "version": "5.1.2",
+  "version": "5.1.3",
   "description": "Feed - PeerTube fork",
   "homepage": "https://github.com/Chocobozzz/feed",
   "author": "Chocobozzz",
