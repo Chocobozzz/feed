@@ -46,7 +46,7 @@ export default (ins: Feed) => {
     base.rss.channel.link = { _text: sanitize(options.link) }
   }
 
-  if (options.link) {
+  if (options.description) {
     base.rss.channel.description = { _text: options.description }
   }
 
@@ -98,6 +98,10 @@ export default (ins: Feed) => {
         'itunes:name': { _text: options.person[0].name },
         'itunes:email': options.locked?.email
       }
+
+      base.rss.channel["itunes:image"] = {
+        _attributes: { href: sanitize(options.person[0].img) }
+      }
     }
   }
 
@@ -117,7 +121,7 @@ export default (ins: Feed) => {
     }
   }
 
-  base.rss.channel["itunes:explicit"] = { _text: options.nsfw ? "yes" : "no" }
+  base.rss.channel["itunes:explicit"] = { _text: options.nsfw ? "true" : "false" }
 
   /**
    * Channel Image
@@ -146,8 +150,10 @@ export default (ins: Feed) => {
   ins.categories.forEach((category) => {
     if (!base.rss.channel.category) {
       base.rss.channel.category = []
+      base.rss.channel["itunes:category"] = []
     }
     base.rss.channel.category.push({ _text: category })
+    base.rss.channel["itunes:category"].push({ _attributes: { text: category } })
   })
 
   /**
@@ -399,7 +405,7 @@ const makePodcastItemJSON = (entry: PodcastItem) => {
     }
   }
 
-  item["itunes:explicit"] = { _text: entry.nsfw ? "yes" : "no" }
+  item["itunes:explicit"] = { _text: entry.nsfw ? "true" : "false" }
 
   if (entry.customTags) {
     addCustomTagsToObject(item, entry.customTags)

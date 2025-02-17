@@ -224,11 +224,11 @@ export default (ins: Feed) => {
 const formatEnclosure = (enclosure: string | Enclosure, mimeCategory = "image") => {
   if (typeof enclosure === "string") {
     const type = new URL(enclosure).pathname.split(".").slice(-1)[0]
-    return { _attributes: { url: enclosure, length: 0, type: `${mimeCategory}/${type}` } }
+    return { _attributes: { url: sanitize(enclosure), length: 0, type: `${mimeCategory}/${type}` } }
   }
 
   const type = new URL(enclosure.url).pathname.split(".").slice(-1)[0]
-  return { _attributes: { length: 0, type: `${mimeCategory}/${type}`, ...enclosure } }
+  return { _attributes: { length: 0, type: `${mimeCategory}/${type}`, ...enclosure, url: sanitize(enclosure.url) } }
 }
 
 /**
