@@ -115,6 +115,8 @@ export interface PodcastItem {
 
   nsfw?: boolean
 
+  duration?: number
+
   customTags?: CustomTag[]
 }
 

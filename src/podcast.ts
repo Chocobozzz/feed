@@ -71,14 +71,7 @@ export default (ins: Feed) => {
   }
 
   if (options.author && options.author.name) {
-    if (options.author.link) {
-      base.rss.channel["podcast:person"] = {
-        _attributes: { href: sanitize(options.author.link) },
-        _text: options.author.name
-      }
-    } else {
-      base.rss.channel["podcast:person"] = { _text: options.author.name }
-    }
+    base.rss.channel["itunes:author"] = { _text: options.author.name }
   }
 
   if (options.person) {
@@ -362,6 +355,10 @@ const makePodcastItemJSON = (entry: PodcastItem) => {
     item["podcast:transcript"] = entry.subTitle.map(({ url, type, language, rel }) => ({
       _attributes: { url: sanitize(url), type, language, rel }
     }))
+  }
+
+  if (entry.duration) {
+    item["itunes:duration"] = { _text: entry.duration }
   }
 
   const defaultEnclosure = entry.media[0]

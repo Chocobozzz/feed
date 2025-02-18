@@ -13,7 +13,7 @@ exports[`podcast should generate a valid feed 1`] = `
         <description>This is my personnal feed!</description>
         <language>en</language>
         <ttl>60</ttl>
-        <podcast:person href=\\"https://example.com/johndoe?link=sanitized&amp;value=2\\">John Doe</podcast:person>
+        <itunes:author>John Doe</itunes:author>
         <itunes:explicit>false</itunes:explicit>
         <image>
             <title>Feed Title</title>
@@ -37,7 +37,7 @@ exports[`podcast should generate a valid feed author no link 1`] = `
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <podcast:medium>podcast</podcast:medium>
-        <podcast:person>John Doe</podcast:person>
+        <itunes:author>John Doe</itunes:author>
         <itunes:explicit>false</itunes:explicit>
         <copyright>All rights reserved 2013, John Doe</copyright>
     </channel>
@@ -101,7 +101,7 @@ exports[`podcast should generate a valid feed medium music 1`] = `
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <podcast:medium>music</podcast:medium>
-        <podcast:person href=\\"https://example.com/hello-world?link=sanitized&amp;value=2\\">John Doe</podcast:person>
+        <itunes:author>John Doe</itunes:author>
         <itunes:explicit>false</itunes:explicit>
         <copyright>All rights reserved 2013, John Doe</copyright>
     </channel>
@@ -175,7 +175,7 @@ exports[`podcast should generate a valid feed with a podcast item 1`] = `
         <description>This is my personnal feed!</description>
         <language>en</language>
         <ttl>60</ttl>
-        <podcast:person href=\\"https://example.com/johndoe?link=sanitized&amp;value=2\\">John Doe</podcast:person>
+        <itunes:author>John Doe</itunes:author>
         <itunes:explicit>false</itunes:explicit>
         <image>
             <title>Feed Title</title>
@@ -222,7 +222,7 @@ exports[`podcast should generate a valid feed with a podcast item enclosure inte
         <description>This is my personnal feed!</description>
         <language>en</language>
         <ttl>60</ttl>
-        <podcast:person href=\\"https://example.com/johndoe?link=sanitized&amp;value=2\\">John Doe</podcast:person>
+        <itunes:author>John Doe</itunes:author>
         <itunes:explicit>false</itunes:explicit>
         <image>
             <title>Feed Title</title>
@@ -441,7 +441,7 @@ exports[`podcast should generate a valid feed with a podcast item guid 1`] = `
         <description>This is my personnal feed!</description>
         <language>en</language>
         <ttl>60</ttl>
-        <podcast:person href=\\"https://example.com/johndoe?link=sanitized&amp;value=2\\">John Doe</podcast:person>
+        <itunes:author>John Doe</itunes:author>
         <itunes:explicit>false</itunes:explicit>
         <image>
             <title>Feed Title</title>
@@ -516,7 +516,7 @@ exports[`podcast should generate a valid feed with a podcast item guid enclosure
         <description>This is my personnal feed!</description>
         <language>en</language>
         <ttl>60</ttl>
-        <podcast:person href=\\"https://example.com/johndoe?link=sanitized&amp;value=2\\">John Doe</podcast:person>
+        <itunes:author>John Doe</itunes:author>
         <itunes:explicit>false</itunes:explicit>
         <image>
             <title>Feed Title</title>
@@ -631,7 +631,7 @@ exports[`podcast should generate a valid feed with a podcast item images 1`] = `
         <description>This is my personnal feed!</description>
         <language>en</language>
         <ttl>60</ttl>
-        <podcast:person href=\\"https://example.com/johndoe?link=sanitized&amp;value=2\\">John Doe</podcast:person>
+        <itunes:author>John Doe</itunes:author>
         <itunes:explicit>false</itunes:explicit>
         <image>
             <title>Feed Title</title>
@@ -760,7 +760,7 @@ exports[`podcast should generate a valid feed with a podcast item multiple enclo
         <description>This is my personnal feed!</description>
         <language>en</language>
         <ttl>60</ttl>
-        <podcast:person href=\\"https://example.com/johndoe?link=sanitized&amp;value=2\\">John Doe</podcast:person>
+        <itunes:author>John Doe</itunes:author>
         <itunes:explicit>false</itunes:explicit>
         <image>
             <title>Feed Title</title>
@@ -918,7 +918,7 @@ exports[`podcast should generate a valid feed with a podcast item multiple sourc
         <description>This is my personnal feed!</description>
         <language>en</language>
         <ttl>60</ttl>
-        <podcast:person href=\\"https://example.com/johndoe?link=sanitized&amp;value=2\\">John Doe</podcast:person>
+        <itunes:author>John Doe</itunes:author>
         <itunes:explicit>false</itunes:explicit>
         <image>
             <title>Feed Title</title>
@@ -1094,7 +1094,7 @@ exports[`podcast should generate a valid feed with a podcast item person 1`] = `
         <description>This is my personnal feed!</description>
         <language>en</language>
         <ttl>60</ttl>
-        <podcast:person href=\\"https://example.com/johndoe?link=sanitized&amp;value=2\\">John Doe</podcast:person>
+        <itunes:author>John Doe</itunes:author>
         <itunes:explicit>false</itunes:explicit>
         <image>
             <title>Feed Title</title>
@@ -1301,7 +1301,7 @@ exports[`podcast should generate a valid feed with a podcast item socialInteract
         <description>This is my personnal feed!</description>
         <language>en</language>
         <ttl>60</ttl>
-        <podcast:person href=\\"https://example.com/johndoe?link=sanitized&amp;value=2\\">John Doe</podcast:person>
+        <itunes:author>John Doe</itunes:author>
         <itunes:explicit>false</itunes:explicit>
         <image>
             <title>Feed Title</title>
@@ -1363,7 +1363,7 @@ exports[`podcast should generate a valid feed with a podcast item stun servers 1
         <description>This is my personnal feed!</description>
         <language>en</language>
         <ttl>60</ttl>
-        <podcast:person href=\\"https://example.com/johndoe?link=sanitized&amp;value=2\\">John Doe</podcast:person>
+        <itunes:author>John Doe</itunes:author>
         <itunes:explicit>false</itunes:explicit>
         <image>
             <title>Feed Title</title>
@@ -1586,7 +1586,7 @@ exports[`podcast should generate a valid feed with a podcast item trackers 1`] =
         <description>This is my personnal feed!</description>
         <language>en</language>
         <ttl>60</ttl>
-        <podcast:person href=\\"https://example.com/johndoe?link=sanitized&amp;value=2\\">John Doe</podcast:person>
+        <itunes:author>John Doe</itunes:author>
         <itunes:explicit>false</itunes:explicit>
         <image>
             <title>Feed Title</title>
@@ -1825,7 +1825,7 @@ exports[`podcast should generate a valid feed with a podcast item transcript 1`]
         <description>This is my personnal feed!</description>
         <language>en</language>
         <ttl>60</ttl>
-        <podcast:person href=\\"https://example.com/johndoe?link=sanitized&amp;value=2\\">John Doe</podcast:person>
+        <itunes:author>John Doe</itunes:author>
         <itunes:explicit>false</itunes:explicit>
         <image>
             <title>Feed Title</title>
@@ -1967,7 +1967,7 @@ exports[`podcast should generate a valid feed with a podcast item with custom ta
         <description>This is my personnal feed!</description>
         <language>en</language>
         <ttl>60</ttl>
-        <podcast:person href=\\"https://example.com/johndoe?link=sanitized&amp;value=2\\">John Doe</podcast:person>
+        <itunes:author>John Doe</itunes:author>
         <itunes:explicit>false</itunes:explicit>
         <image>
             <title>Feed Title</title>
@@ -2070,7 +2070,7 @@ exports[`podcast should generate a valid feed with a podcast liveItem 1`] = `
         <description>This is my personnal feed!</description>
         <language>en</language>
         <ttl>60</ttl>
-        <podcast:person href=\\"https://example.com/johndoe?link=sanitized&amp;value=2\\">John Doe</podcast:person>
+        <itunes:author>John Doe</itunes:author>
         <itunes:explicit>false</itunes:explicit>
         <image>
             <title>Feed Title</title>
@@ -2343,7 +2343,7 @@ exports[`podcast should generate a valid feed with a podcast liveItem ended 1`] 
         <description>This is my personnal feed!</description>
         <language>en</language>
         <ttl>60</ttl>
-        <podcast:person href=\\"https://example.com/johndoe?link=sanitized&amp;value=2\\">John Doe</podcast:person>
+        <itunes:author>John Doe</itunes:author>
         <itunes:explicit>false</itunes:explicit>
         <image>
             <title>Feed Title</title>
@@ -2632,7 +2632,7 @@ exports[`podcast should generate a valid feed with a podcast liveItem pending 1`
         <description>This is my personnal feed!</description>
         <language>en</language>
         <ttl>60</ttl>
-        <podcast:person href=\\"https://example.com/johndoe?link=sanitized&amp;value=2\\">John Doe</podcast:person>
+        <itunes:author>John Doe</itunes:author>
         <itunes:explicit>false</itunes:explicit>
         <image>
             <title>Feed Title</title>
