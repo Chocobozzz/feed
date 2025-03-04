@@ -2,7 +2,7 @@ import * as convert from 'xml-js'
 import { generator } from './config'
 import { Feed } from './feed'
 import { Author, Category, Enclosure, Item } from './typings'
-import { sanitize } from './utils'
+import { addCustomTagsToObject, addCustomXMLNS, sanitize } from './utils'
 
 /**
  * Returns a RSS 2.0 feed
@@ -25,6 +25,10 @@ export default (ins: Feed) => {
         generator: { _text: options.generator || generator },
       },
     },
+  }
+
+  if (options.customXMLNS) {
+    addCustomXMLNS(base.rss, options.customXMLNS)
   }
 
   /**
@@ -107,6 +111,10 @@ export default (ins: Feed) => {
         rel: "hub"
       }
     }
+  }
+
+  if (options.customTags) {
+    addCustomTagsToObject(base.rss.channel, options.customTags)
   }
 
   /**
@@ -197,6 +205,10 @@ export default (ins: Feed) => {
 
     if (entry.video) {
       item.enclosure = formatEnclosure(entry.video, "video")
+    }
+
+    if (entry.customTags) {
+      addCustomTagsToObject(item, entry.customTags)
     }
 
     processMRSS(base.rss._attributes, entry, item)

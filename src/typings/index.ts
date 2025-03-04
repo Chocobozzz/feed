@@ -74,6 +74,8 @@ export interface Item {
   }[]
 
   nsfw?: boolean
+
+  customTags?: CustomTag[]
 }
 
 export interface PodcastItem {
