@@ -119,6 +119,10 @@ export default (ins: Feed) => {
       url: { _text: options.image },
       link: { _text: sanitize(options.link) }
     }
+
+    base.rss.channel["itunes:image"] = {
+      _attributes: { href: sanitize(options.image) }
+    }
   }
 
   /**
@@ -327,7 +331,7 @@ const makePodcastItemJSON = (entry: PodcastItem) => {
     })
   )
 
-  if (entry.thumbnails) {
+  if (Array.isArray(entry.thumbnails) && entry.thumbnails.length > 0) {
     const defaultImage = entry.thumbnails[0]
 
     item["itunes:image"] = {
